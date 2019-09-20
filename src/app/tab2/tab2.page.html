@@ -6,4 +6,24 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+
+<ion-content>
+  <form [formGroup]="createArticleForm" class="create-blog" (ngSubmit)="createArticle()">
+    <ion-item>
+      <ion-input type="text" placeholder="Title" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Written By" formControlName="writtenBy"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Content Preview" formControlName="contentPreview"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Content" rows="5" formControlName="content"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Image" rows="10" formControlName="mainImg"></ion-input>
+    </ion-item>
+    <ion-button [disabled]="createArticleForm.invalid" type="submit">Create article</ion-button>
+  </form>
+</ion-content>
