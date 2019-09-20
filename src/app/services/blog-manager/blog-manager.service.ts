@@ -54,4 +54,10 @@ export class BlogManagerService {
       observer.next(true);
     });
   }
+
+  public getArticle(index: number): Observable<Article> {
+    return new Observable(observer => {
+      observer.next(this.articles[index]);
+    })
+  }
 }
